@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Sitemap: https://spaceco.com.tw/sitemap.xml
+
+# 允許所有搜尋引擎機器人訪問
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Baiduspider
+Allow: / 
