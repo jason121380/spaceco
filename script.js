@@ -322,7 +322,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 點擊照片徽章時打開照片集
     document.querySelectorAll('.venue-photos-badge').forEach(badge => {
-        badge.addEventListener('click', function() {
+        badge.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             const spaceType = this.getAttribute('data-space');
             openGallery(spaceType);
         });
@@ -335,7 +337,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (img && badge) {
             img.style.cursor = 'pointer';
-            img.addEventListener('click', function() {
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 const spaceType = badge.getAttribute('data-space');
                 openGallery(spaceType);
             });
