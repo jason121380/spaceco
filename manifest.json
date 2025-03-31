@@ -1,0 +1,16 @@
+{
+    "name": "SPACECO 共享空間",
+    "short_name": "SPACECO",
+    "description": "台北場地租借推薦首選，提供多功能展演廳、會議室出租服務",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#6EB5FF",
+    "icons": [
+        {
+            "src": "images/compressed/favi.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+} 
