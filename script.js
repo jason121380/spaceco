@@ -271,59 +271,47 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryOpen = false;
     }
 
-    // ===== 加载动画 =====
-    // 页面加载完成后隐藏加载动画 - WeWork风格过渡
-    window.addEventListener('load', function() {
-        const loader = document.querySelector('.page-loader');
-        if (loader) {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }
-    });
-    
     // ===== 場地照片集功能 =====
     // 場地照片集配置
     const venueGalleryConfig = {
         multi: {
             title: '多功能展演廳',
             photos: [
-                'images/multi/main.jpg',
-                'images/multi/1.jpg',
-                'images/multi/2.jpg',
-                'images/multi/3.jpg',
-                'images/multi/4.jpg',
-                'images/multi/5.jpg',
-                'images/multi/6.jpg'
+                'images/compressed/multi/Main.jpg',
+                'images/compressed/multi/1.jpg',
+                'images/compressed/multi/2.jpg',
+                'images/compressed/multi/3.jpg',
+                'images/compressed/multi/4.jpg',
+                'images/compressed/multi/5.jpg',
+                'images/compressed/multi/6.jpg'
             ]
         },
         large: {
             title: '大會議室',
             photos: [
-                'images/big/main.jpg',
-                'images/big/1.jpg',
-                'images/big/2.jpg',
-                'images/big/3.jpg',
-                'images/big/4.jpg'
+                'images/compressed/big/main.jpg',
+                'images/compressed/big/1.jpg',
+                'images/compressed/big/2.jpg',
+                'images/compressed/big/3.jpg',
+                'images/compressed/big/4.jpg'
             ]
         },
         small: {
             title: '小會議室',
             photos: [
-                'images/small/main.jpg',
-                'images/small/1.jpg'
+                'images/compressed/small/main.jpg',
+                'images/compressed/small/1.jpg'
             ]
         },
         studio: {
             title: '拍攝空間',
             photos: [
-                'images/film/main.jpg',
-                'images/film/1.jpg',
-                'images/film/2.jpg',
-                'images/film/3.jpg',
-                'images/film/4.jpg',
-                'images/film/5.jpg'
+                'images/compressed/film/main.jpg',
+                'images/compressed/film/1.jpg',
+                'images/compressed/film/2.jpg',
+                'images/compressed/film/3.jpg',
+                'images/compressed/film/4.jpg',
+                'images/compressed/film/5.jpg'
             ]
         }
     };
@@ -449,20 +437,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('venueGalleryModal').classList.remove('active');
     });
 
-    // ===== 加载动画 =====
-    // 页面加载完成后隐藏加载动画 - WeWork风格过渡
-    window.addEventListener('load', function() {
-        const loader = document.querySelector('.page-loader');
-        if (loader) {
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 400);
-            }, 300);
-        }
-    });
-
     // 为卡片添加WeWork风格悬停效果
     const cards = document.querySelectorAll('.space-item, .location-card, .card');
     cards.forEach(card => {
@@ -532,15 +506,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    window.addEventListener('load', function() {
-        // 添加内容进入动画
-        setTimeout(() => {
-            document.querySelectorAll('.animate-on-scroll').forEach((element, index) => {
-                setTimeout(() => {
-                    element.classList.add('show');
-                }, index * 50); // 依次显示每个元素
-            });
-        }, 500);
+    // 直接显示所有动画元素
+    document.querySelectorAll('.animate-on-scroll').forEach((element, index) => {
+        element.classList.add('show');
     });
 });
 

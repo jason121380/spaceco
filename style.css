@@ -135,9 +135,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 48px;
-    letter-spacing: -0.5px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
     margin-bottom: 24px;
+    font-weight: 700;
+    color: white;
 }
 
 h2 {
@@ -288,13 +290,14 @@ h4 {
 
 /* 英雄部分 */
 .hero-section {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('images/multi/6.jpg');
+    background-image: url('images/compressed/multi/6.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
+    overflow: hidden;
     color: white;
 }
 
@@ -334,14 +337,6 @@ h4 {
     margin-bottom: 32px;
     font-weight: 400;
     text-align: center;
-}
-
-.hero-section h1 {
-    font-size: clamp(2.5rem, 7vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 24px;
-    font-weight: 700;
-    color: white;
 }
 
 .hero-section h2 {
