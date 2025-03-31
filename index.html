@@ -88,13 +88,43 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="images/compressed/logo.png" as="image">
+    <link rel="preload" href="images/compressed/multi/6.jpg" as="image">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- 预连接外部资源 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- 关键 CSS -->
+    <style>
+        /* 添加首屏关键 CSS */
+        body {
+            margin: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .hero-section {
+            min-height: 100vh;
+            background-color: #000;
+        }
+        .hero-content {
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+    </style>
+    
+    <!-- 异步加载非关键 CSS -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/favi.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favi.png">
+    <link rel="icon" type="image/png" href="images/compressed/favi.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/compressed/favi.png">
     <meta name="theme-color" content="#6EB5FF">
 </head>
 <body>
@@ -102,7 +132,7 @@
         <div class="container">
             <div class="logo">
                 <a href="#">
-                    <img src="images/logo.png" alt="SPACECO台北場地租借共享空間logo">
+                    <img src="images/compressed/logo.png" alt="SPACECO Logo" loading="eager">
                 </a>
             </div>
             <nav class="main-nav">
@@ -163,7 +193,7 @@
                     <div class="about-image-container order-1 animate-on-scroll">
                         <div class="image-frame">
                             <div class="about-image">
-                                <img src="images/compressed/film/2.jpg" alt="SPACECO台北松江南京館室內空間照片">
+                                <img src="images/compressed/film/2.jpg" alt="SPACECO台北松江南京館室內空間照片" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -235,7 +265,7 @@
                 <div class="spaces-grid four-columns">
                     <div class="space-item animate-on-scroll">
                         <div class="space-image">
-                            <img src="images/compressed/multi/Main.jpg" alt="SPACECO台北中山國小館多功能展演廳照片">
+                            <img src="images/compressed/multi/Main.jpg" alt="SPACECO台北中山國小館多功能展演廳照片" loading="lazy">
                             <div class="venue-photos-badge" data-space="multi">
                                 <span class="photo-count">7 張照片</span>
                             </div>
@@ -266,7 +296,7 @@
                     </div>
                     <div class="space-item animate-on-scroll">
                         <div class="space-image">
-                            <img src="images/compressed/big/main.jpg" alt="SPACECO台北松江南京館大型會議室照片">
+                            <img src="images/compressed/big/main.jpg" alt="SPACECO台北松江南京館大型會議室照片" loading="lazy">
                             <div class="venue-photos-badge" data-space="large">
                                 <span class="photo-count">5 張照片</span>
                             </div>
@@ -297,7 +327,7 @@
                     </div>
                     <div class="space-item animate-on-scroll">
                         <div class="space-image">
-                            <img src="images/compressed/small/main.jpg" alt="SPACECO台北松江南京館小型會議室照片">
+                            <img src="images/compressed/small/main.jpg" alt="SPACECO台北松江南京館小型會議室照片" loading="lazy">
                             <div class="venue-photos-badge" data-space="small">
                                 <span class="photo-count">2 張照片</span>
                             </div>
@@ -328,7 +358,7 @@
                     </div>
                     <div class="space-item animate-on-scroll">
                         <div class="space-image">
-                            <img src="images/compressed/film/main.jpg" alt="SPACECO台北專業攝影棚空間照片">
+                            <img src="images/compressed/film/main.jpg" alt="SPACECO台北專業攝影棚空間照片" loading="lazy">
                             <div class="venue-photos-badge" data-space="studio">
                                 <span class="photo-count">6 張照片</span>
                             </div>
@@ -720,7 +750,7 @@
             <div class="footer-grid">
                 <div class="footer-info animate-on-scroll">
                     <a href="#" class="footer-logo">
-                        <img src="images/logo.png" alt="SPACECO台北場地租借共享空間logo">
+                        <img src="images/compressed/logo.png" alt="SPACECO Logo" loading="lazy">
                     </a>
                     <p class="company-desc">台北最佳場地解決方案</p>
                     <div class="footer-tags">
@@ -810,6 +840,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- 异步加载 JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
